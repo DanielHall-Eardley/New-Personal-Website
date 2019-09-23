@@ -1,0 +1,38 @@
+@import "./variables";
+
+@mixin mediaQ ($bp){
+  @if $bp == phone {
+    @media only screen and (max-width: 40.62em){
+      @content
+    }
+  };
+
+  @if $bp == tablet {
+    @media only screen and (max-width: 56.25em){
+      @content
+    }
+  };
+
+}
+
+@mixin button($c1, $c2) {
+  font-size: 2.5rem;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  color: $c1;
+  padding: 1rem;
+  border-radius: $b-rad-sml;
+  transition: all .3s;
+  text-align: left;
+
+  &:hover{
+    background-color: $c2;
+  }
+
+  &:active {
+    background-color: $c1;
+    color: $c2;
+  }
+}
